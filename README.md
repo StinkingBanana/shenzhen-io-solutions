@@ -1,5 +1,5 @@
 # SHENZHEN I/O Solutions
-Solutions for the game: [SHENZHEN IO]
+Solutions for the game: [SHENZHEN IO][1]
 
 ## To Use
 Each folder contains the ```.txt``` solution save file.  
@@ -22,7 +22,7 @@ $HOME/.local/share/SHENZHEN IO/<Steam account id>/
 
 ## Note
 The solutions were came up during my live streamings.  
-You can check out my past boardcasts for [SHENZHEN IO] here @ [Youtube](https://www.youtube.com/playlist?list=PLDP6NTf4kn8QJxirkEDzEe1aDysHTAnR3)
+You can check out my past boardcasts for [SHENZHEN IO][1] here @ [Youtube](https://www.youtube.com/playlist?list=PLDP6NTf4kn8QJxirkEDzEe1aDysHTAnR3)
 
 If you find this helpful, feel free to come to my live stream and say hi to me :D  
 - [Twitch TV Live](https://www.twitch.tv/stinkingbanana) 
@@ -31,4 +31,4 @@ If you find this helpful, feel free to come to my live stream and say hi to me :
 
 
 
-[SHENZHEN IO]:(http://store.steampowered.com/app/504210/SHENZHEN_IO/) 
+[1]:(https://www.humblebundle.com/store/shenzhen-io?partner=stinkingbanana&charity=12277) 
