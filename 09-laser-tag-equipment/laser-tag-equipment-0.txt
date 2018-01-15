@@ -1,0 +1,102 @@
+[name] VER 1.0
+[puzzle] Sz048
+[production-cost] 1000
+[power-usage] 709
+[lines-of-code] 21
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..........955555555C..
+...14.....A.......16..
+..154154.16.14.14.14..
+..14..94.......15414..
+..15556.........155C..
+...................2..
+......................
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 13
+[y] 2
+[code] 
+100 = alive
+001 = dead + re
+101 = alive + re
+110 = alive + trig
+
+dat = ammo
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 3
+[code] 
+010 = res
+100 = hit
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 4
+[code] 
+  mov x3 dat
+  mov 0 p1
+  teq dat 101
++ mov x0 acc
+  teq dat 1
++ mov x0 acc
+  teq dat 110
++ sub 1
+- jmp end
+  tlt acc 0
++ mov 0 acc
+- mov 100 p1
+end: slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 5
+[code] 
+  mov x0 acc
+  teq acc 10
++ mov 100 p0
++ mov 100 p1
+  teq acc 100
++ mov 0 p0
++ mov 0 p1
+  slp 1
+
+[chip] 
+[type] DX3
+[x] 17
+[y] 5
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 6
+[rotated] true
+
+[chip] 
+[type] DIAL7
+[x] 11
+[y] 6
+[is-puzzle-provided] true
+
