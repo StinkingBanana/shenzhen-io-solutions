@@ -1,0 +1,170 @@
+[name] VER 1.1
+[puzzle] Sz015
+[production-cost] 1100
+[power-usage] 1173
+[lines-of-code] 29
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+....1554.15554.154....
+...............1C.....
+....1554.15555556.....
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+X1: x < 20
+X5: 20 <= x < 40
+X4: 40 <= x < 60
+X3: 60 <= x < 80
+X2: 80 <= x
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 1
+[code] 
+Y1: y < 40
+Y3: 40 <= y < 80
+Y2: 80 <= y
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 1
+[code] 
+  X1 X2 X3 |X4 X5
+Y1 A  A  A | B  B
+Y2 A  A  A | B  B
+-----------------
+Y3 A  A  D | C  B
+A: 30
+B: 0
+C: 50
+D: 80
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 1
+[code] 
+X1: 
+x < 20    LEFT
+X2+X3:    HALF
+60 <= x
+
+X4+X5:
+20 <= x < 60 RIGHT
+             HALF
+
+[chip] 
+[type] NOTE
+[x] 13
+[y] 1
+[code] 
+Y1 + Y2:
+y < 40       TOP
+80 <= y      HALF
+
+Y3:
+40 <= y < 80 
+             BOT
+             HALF
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 3
+[code] 
+X4 + X3:
+40 ~ 60 ~ 80
+  acc 2 acc 3
+X1 + X2 = acc 0
+0 ~ 20
+80 ~ 100
+
+X5 = acc 1 
+20 ~ 40
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 4
+[code] 
+  mov 0 acc
+  tlt p0 40
++ jmp end
+  tlt p0 80
++ mov 100 acc
+  
+end: mov acc x1
+  slp 1
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 5
+[code] 
+0: Y1, Y2
+
+100: Y3
+
+[chip] 
+[type] UC4
+[x] 13
+[y] 5
+[code] 
+  mov x0 acc
+  teq x1 0
+- jmp end
+  teq acc 80
++ mov 30 acc
+  teq acc 50
++ mov 0 acc
+end:  mov acc p1
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  mov 30 acc
+  tlt p0 20
++ jmp end
+  tgt p0 79
++ jmp end
+  tlt p0 40
++ mov 0 acc
++ jmp end
+  tlt p0 60
++ mov 50 acc
+- mov 80 acc
+end: mov acc x2
+  slp 1
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 7
+[code] 
+0: X1, X2 => 30
+
+1: X5 => 0
+
+2: X4 => 50
+
+3: X3 => 80
+
