@@ -1,0 +1,82 @@
+[name] VER 1.1
+[puzzle] Sz010
+[production-cost] 800
+[power-usage] 436
+[lines-of-code] 16
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...954.1555C..........
+...294.14..3554.......
+....355555555554......
+...8....14....14......
+...354.155555554......
+....14.154............
+......................
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 2
+[code] 
+  mov x1 dat
+  teq dat -999
+- mov dat x0
+- mov x1 x3
+- mov x1 p1
+- mov x1 acc
+  teq acc 0
++ mov 0 x0
++ mov 0 x3
++ mov 0 p1
+  sub 1
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 5
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 7
+[code] 
+  slx x0
+  mov x0 p0
+  slx x1
+  mov x1 p1
+

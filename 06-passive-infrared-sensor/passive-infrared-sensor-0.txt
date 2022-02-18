@@ -1,0 +1,64 @@
+[name] VER 1.0
+[puzzle] Sz005
+[production-cost] 800
+[power-usage] 542
+[lines-of-code] 12
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+....154.1C............
+.........34.155554....
+............154.......
+.......1554.154.......
+......................
+......................
+
+[chip] 
+[type] RTC
+[x] 5
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+  mov x0 acc
+  teq p0 x2
++ mov 100 dat
+  teq p0 x3
++ mov 0 dat
+  add dat
+  tgt acc 119
++ mov 100 p1
+- mov 0 p1
+  slp 1
+
+[chip] 
+[type] DIAL1
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL2
+[x] 14
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 5
+[code] 
+  mov p0 x1
+  slp 1
+

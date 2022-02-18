@@ -1,0 +1,120 @@
+[name] VER 1.0
+[puzzle] Sz015
+[production-cost] 1300
+[power-usage] 1303
+[lines-of-code] 35
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+....1554.14...1554....
+......14..............
+....1554.14...1C......
+......1555555556......
+......................
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+X1: x < 20
+X5: 20 <= x < 40
+X4: 40 <= x < 60
+X3: 60 <= x < 80
+X2: 80 <= x
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 1
+[code] 
+Y1: y < 40
+Y3: 40 <= y < 80
+Y2: 80 <= y
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 1
+[code] 
+  X1 X2 X3 X4 X5
+Y1 A  A  A  B  B
+Y2 A  A  A  B  B
+Y3 A  A  D  C  B
+
+A: 30
+B: 0
+C: 50
+D: 80
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 4
+[code] 
+  dst 1 x1
+  dst 0 2
+  tlt p0 40
++ dst 0 1
++ jmp end
+  tlt p0 80
++ dst 0 3
+end: mov acc x0
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 4
+[code] 
+  slx x2
+  mov x2 dat
+  tcp dat 33
+- mov 30 p1
+- jmp end
++ jmp next
+  mov 80 p1
+  jmp end
+next: teq dat 43
++ mov 50 p1
+- mov 0 p1
+end:slp 1
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  mov 2 acc
+  tlt p0 20
++ mov 1 acc
++ jmp end
+  tlt p0 40
++ mov 5 acc
++ jmp end
+  tlt p0 60
++ mov 4 acc
++ jmp end
+  tlt p0 80
++ mov 3 acc
+end: mov acc x2
+  slp 1
+
